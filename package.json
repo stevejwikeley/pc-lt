@@ -1,0 +1,22 @@
+{
+  "name": "@salesforce-ux/design-system",
+  "description": "Salesforce Lightning Design System",
+  "version": "2.1.4",
+  "author": "Salesforce",
+  "license": "SEE LICENSE IN README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/salesforce-ux/design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/salesforce-ux/design-system/issues"
+  },
+  "homepage": "https://github.com/salesforce-ux/design-system#readme",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

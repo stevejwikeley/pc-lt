@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="assets/styles/salesforce-lightning-design-system.css" />
+  <title>Playground</title>
+  <script>
+
+    function toggleOption(tar){
+      var one = document.getElementById('option1');
+      var two = document.getElementById('option2');
+      if(tar == 1){
+        two.className = 'slds-grid slds-hide';
+        one.className = 'slds-grid slds-show';
+        
+      }
+      if(tar == 2){
+        two.className = 'slds-grid slds-show';
+        one.className = 'slds-grid slds-hide';
+       
+        
+      }
+    }
+
+  </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Holidays',     11],
+        ['Sick',      2],
+        ['Public',  2]
+        
+        ]);
+
+      var options = {
+        title: 'My Leave',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+      var chart2 = new google.visualization.PieChart(document.getElementById('donutchart2'));
+      chart2.draw(data, options);
+    }
+  </script>
+  <style>
+    .slds-datepicker {
+      max-width: 20rem;
+    }
+    .holidaytable tbody tr td:nth-child(7n), .holidaytable tbody tr td:nth-child(7n+1){
+      background-color:#ccc;
+    }
+
+    .holidaytable tbody tr td:first-child{
+      background-color: white;
+      color: #666;
+    }
+
+    .holidaytable .slds-is-selected{
+      background-color: blue;
+    }
+
+    .holidaytable{
+      table-layout: fixed;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slds-context-bar">
+    <div class="slds-context-bar__primary slds-context-bar__item--divider-right">
+      <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--click slds-no-hover">
+        <div class="slds-context-bar__icon-action">
+          <a href="javascript:void(0);" class="slds-icon-waffle_container slds-context-bar__button">
+            <div class="slds-icon-waffle">
+              <div class="slds-r1"></div>
+              <div class="slds-r2"></div>
+              <div class="slds-r3"></div>
+              <div class="slds-r4"></div>
+              <div class="slds-r5"></div>
+              <div class="slds-r6"></div>
+              <div class="slds-r7"></div>
+              <div class="slds-r8"></div>
+              <div class="slds-r9"></div>
+            </div>
+            <span class="slds-assistive-text">Open App Launcher</span>
+          </a>
+        </div>
+        <span class="slds-context-bar__label-action slds-context-bar__app-name">
+          <span class="slds-truncate" title="{ props.appName || &#x27;App Name&#x27; }">App Name</span>
+        </span>
+      </div>
+    </div>
+    <nav class="slds-context-bar__secondary" role="navigation">
+      <ul class="slds-grid">
+        <li class="slds-context-bar__item">
+          <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Home">
+            <span class="slds-truncate">Home</span>
+          </a>
+        </li>
+        <li class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--hover" aria-haspopup="true">
+          <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item">
+            <span class="slds-truncate">Menu Item</span>
+          </a>
+          <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0">
+            <button class="slds-button slds-button--icon slds-context-bar__button" tabindex="-1" title="Open menu item submenu">
+              <svg aria-hidden="true" class="slds-button__icon">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+              </svg>
+              <span class="slds-assistive-text">Open menu item submenu</span>
+            </button>
+          </div>
+          <div class="slds-dropdown slds-dropdown--right">
+            <ul class="slds-dropdown__list" role="menu">
+              <li class="slds-dropdown__item" role="presentation">
+                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                  <span class="slds-truncate">
+                    <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+                    </svg>Main action</span>
+                  </a>
+                </li>
+                <li class="slds-dropdown__header slds-has-divider--top-space" role="separator">
+                  <span class="slds-text-title--caps">Menu header</span>
+                </li>
+                <li class="slds-dropdown__item" role="presentation">
+                  <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                    <span class="slds-truncate">Menu Item One</span>
+                  </a>
+                </li>
+                <li class="slds-dropdown__item" role="presentation">
+                  <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                    <span class="slds-truncate">Menu Item Two</span>
+                  </a>
+                </li>
+                <li class="slds-dropdown__item" role="presentation">
+                  <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                    <span class="slds-truncate">Menu Item Three</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="slds-context-bar__item slds-is-active">
+            <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item">
+              <span class="slds-truncate">Menu Item</span>
+            </a>
+          </li>
+          <li class="slds-context-bar__item">
+            <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item 0">
+              <span class="slds-truncate">Menu Item</span>
+            </a>
+          </li>
+          <li class="slds-context-bar__item">
+            <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item 1">
+              <span class="slds-truncate">Menu Item</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="slds-page-header" role="banner">
+      <div class="slds-grid">
+        <div class="slds-col slds-has-flexi-truncate">
+          <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+              <svg aria-hidden="true" class="slds-icon slds-icon-standard-user">
+                <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#user"></use>
+              </svg>
+            </div>
+            <div class="slds-media__body">
+              <p class="slds-text-title--caps slds-line-height--reset">Resource</p>
+              <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="this should match the Record Title">Adrian Smalley</h1>
+
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-no-flex slds-grid slds-align-top">
+
+
+          <div class="slds-button-group" role="group">
+            <button class="slds-button slds-button--neutral">Edit</button>
+            <button class="slds-button slds-button--neutral">Delete</button>
+            <button class="slds-button slds-button--neutral">Clone</button>
+
+          </div>
+        </div>
+      </div>
+      <ul class="slds-grid slds-page-header__detail-row">
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 1">Grade</p>
+          <p class="slds-text-body--regular slds-truncate" title="Description that demonstrates truncation with a long text field">Director</p>
+        </li>
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 1">Role</p>
+          <p class="slds-text-body--regular slds-truncate" title="Description that demonstrates truncation with a long text field">Programme Architect</p>
+        </li>
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 1">Location</p>
+          <p class="slds-text-body--regular slds-truncate" title="Description that demonstrates truncation with a long text field">London</p>
+        </li>
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 1">Next PTO</p>
+          <p class="slds-text-body--regular slds-truncate" title="Description that demonstrates truncation with a long text field">12 Jan 16 - 15 Jan 16</p>
+        </li>
+      </ul>
+    </div>
+    <div class="slds-grid slds-wrap" style="margin-top: 20px;">
+
+
+      <div class="slds-p-horizontal--small slds-size--1-of-1">
+        <div class="slds-tabs--default">
+          <ul class="slds-tabs--default__nav" role="tablist">
+            <li class="slds-tabs--default__item slds-text-title--caps slds-active" title="Item One" role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">My Timesheets</a></li>
+            <li class="slds-tabs--default__item slds-text-title--caps" title="Item Two"
+            role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">My Expenses</a></li>
+            <li class="slds-tabs--default__item slds-text-title--caps" title="Item Three"
+            role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">My Approvals</a></li>
+          </ul>
+          <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+            <div class="slds-grid slds-wrap">
+              <div class="slds-tabs--scoped">
+                <ul class="slds-tabs--scoped__nav" role="tablist">
+                  <li class="slds-tabs--scoped__item slds-text-title--caps" title="Item One" role="presentation"><a class="slds-tabs--scoped__link" onclick="toggleCurr()"  role="tab" tabindex="0" aria-selected="true" aria-controls="tab-scoped-1" id="tab-scoped-1__item">Current Timesheet</a></li>
+                  <li class="slds-tabs--scoped__item slds-text-title--caps" title="Item Two"
+                  role="presentation"> <a class="slds-tabs--scoped__link" onclick="togglePre()" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-scoped-1" id="tab-scoped-1__item"> Previous Timesheets <span class="slds-badge">2</span>  </a></li>
+                  <li class="slds-tabs--scoped__item slds-text-title--caps slds-active" title="Item Three"
+                  role="presentation"><a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-3" id="tab-scoped-3__item">Holidays</a></li>
+                </ul>
+                <div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+                  <h3 class="slds-text-heading--medium slds-truncate slds-p-bottom--large" title="this should match My Leads"> Leave for 2017 <svg aria-hidden="true" class="slds-button__icon slds-button__icon--right slds-no-flex">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                  </svg>
+                  
+                </h3>
+                <div class="slds-grid" id="option1">
+                  <div class="slds-p-horizontal--small slds-size--5-of-6 ">
+                    <table class="slds-table holidaytable slds-table--bordered" style="color: #ededed;">
+                      <thead>
+                        <tr class="slds-text-title--caps">
+                          <th width="100px">Month</th>
+                          <th>M</th>
+                          <th>T</th>
+                          <th>W</th>
+                          <th>T</th>
+                          <th>F</th>
+                          <th>S</th>
+                          <th>S</th>
+                          <th>M</th>
+                          <th>T</th>
+                          <th>W</th>
+                          <th>T</th>
+                          <th>F</th>
+                          <th>S</th>
+                          <th>S</th>
+                          <th>M</th>
+                          <th>T</th>
+                          <th>W</th>
+                          <th>T</th>
+                          <th>F</th>
+                          <th>S</th>
+                          <th>S</th>
+                          <th>M</th>
+                          <th>T</th>
+                          <th>W</th>
+                          <th>T</th>
+                          <th>F</th>
+                          <th>S</th>
+                          <th>S</th>
+                          <th>M</th>
+                          <th>T</th>
+                          <th>W</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Jan</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>Feb</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>Mar</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>Apr</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>May</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>June</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td class="slds-is-selected slds-is-selected-multi">11</td>
+                          <td class="slds-is-selected slds-is-selected-multi">12</td>
+                          <td class="slds-is-selected slds-is-selected-multi">13</td>
+                          <td class="slds-is-selected slds-is-selected-multi">14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>July</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>August</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>September</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td class="slds-is-selected slds-is-selected-multi">9</td>
+                          <td class="slds-is-selected slds-is-selected-multi">10</td>
+                          <td class="slds-is-selected slds-is-selected-multi">11</td>
+                          <td class="slds-is-selected slds-is-selected-multi">12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>October</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>November</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                        <tr>
+                          <td>December</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td>31</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="slds-p-horizontal--small slds-size--1-of-6 slds-box">
+                    <div>
+                      <div id="donutchart" ></div>
+
+                    </div>
+                    <div class="slds-p-bottom--large">
+                      <center><h3 class="slds-text-heading--large">60 h</h3>
+                        <p> Leave Remaining</p></center>
+                      </div>
+                      <div class="slds-p-bottom--large">
+                        <center><h3 class="slds-text-heading--large">30 h </h3>
+                          <p>Waiting Approval</p></center>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <hr/>
+
+                      <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                          <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                              <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+                                <use xlink:href="assets/icons/custom-sprite/svg/symbols.svg#custom20"></use>
+                              </svg>
+                            </div>
+                            <div class="slds-media__body slds-truncate">
+                              <h2>
+                                <a href="javascript:void(0);" class="slds-text-link--reset">
+                                  <span class="slds-text-heading--small">Leave Requests</span>
+
+                                </a>
+                                
+                              </h2>
+                            </div>
+                          </header>
+                          <div class="slds-no-flex">
+                           <button class="slds-button slds-button--neutral slds-not-selected" aria-live="assertive">
+                            <span class="slds-text-not-selected">
+                              <svg aria-hidden="true" class="slds-button__icon--stateful slds-button__icon--left">
+                                <use xlink:href="assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+                              </svg>New Request</span>
+                              <span class="slds-text-selected">
+                                <svg aria-hidden="true" class="slds-button__icon--stateful slds-button__icon--left">
+                                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                </svg>Following</span>
+                                <span class="slds-text-selected-focus">
+                                  <svg aria-hidden="true" class="slds-button__icon--stateful slds-button__icon--left">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                                  </svg>Unfollow</span>
+                                </button>
+
+
+                              </div>
+                            </div>
+                            <div class="slds-card__body">
+                              <table class="slds-table slds-table--bordered slds-no-row-hover slds-table--cell-buffer">
+                                <thead>
+                                  <tr class="slds-text-title--caps">
+                                    <th scope="col" >
+                                      <div class="slds-truncate" title="Name">Request</div>
+                                    </th>
+                                    <th scope="col" >
+                                      <div class="slds-truncate" title="Name">Description</div>
+                                    </th>
+                                    <th scope="col">
+                                     <div class="slds-truncate" title="Title">Hours</div>
+                                   </th>
+                                   <th scope="col">
+                                    <div class="slds-truncate" title="Company">Status</div>
+                                  </th>
+                                  <th scope="col" >
+                                    <div class="slds-truncate" title="Title">Start Date</div>
+                                  </th>
+                                  <th scope="col" >
+                                    <div class="slds-truncate" title="Title">End Date</div>
+                                  </th>
+                                  <th scope="col">
+                                    <div class="slds-truncate" title="Email">Approver</div>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="slds-hint-parent">
+                                  <td scope="row">
+                                    <a href="javascript:void(0);">Annual Leave</a>
+                                  </td>
+                                  <td>
+                                    Holiday to Barbados - #winning
+                                  </td>
+                                  <td>
+                                    40 h [5 d]
+                                  </td>
+                                  <td>
+                                    Draft
+                                  </td>
+                                  <td>
+                                    Mon 12 Jan 2017
+                                  </td>
+                                  <td>
+                                    Fri 17 Jan 2017
+                                  </td>
+                                  <td>
+                                    Adrian Smalley
+                                  </td>
+
+                                </tr>
+                                <tr class="slds-hint-parent">
+                                  <td scope="row">
+                                    <a href="javascript:void(0);">Sick Leave</a>
+                                  </td>
+                                  <td>
+                                    Illness
+                                  </td>
+                                  <td>
+                                    30 h [4.5 d]
+                                  </td>
+                                  <td>
+                                    Awaiting Doctors Note
+                                  </td>
+                                  <td>
+                                    Mon 12 Jan 2017
+                                  </td>
+                                  <td>
+                                    Fri 17 Jan 2017
+                                  </td>
+                                  <td>
+                                    Adrian Smalley
+                                  </td>
+
+                                </tr>
+
+                              </tbody>
+
+
+                            </table>
+                          </div>
+                          <div class="slds-card__footer">
+
+
+                          </div>
+                        </article>
+
+
+
+                      </div>
+                    </div>
+                    <div id="tab-scoped-2" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-2__item">
+
+                     <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                      <thead>
+                        <tr class="slds-text-title--caps">
+                          <th scope="col">
+                            <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                          </th>
+                          <th scope="col">
+                            <div class="slds-truncate" title="Account Name">Account Name</div>
+                          </th>
+                          <th scope="col">
+                            <div class="slds-truncate" title="Close Date">Close Date</div>
+                          </th>
+                          <th scope="col">
+                            <div class="slds-truncate" title="Stage">Stage</div>
+                          </th>
+                          <th scope="col">
+                            <div class="slds-truncate" title="Confidence">Confidence</div>
+                          </th>
+                          <th scope="col">
+                            <div class="slds-truncate" title="Amount">Amount</div>
+                          </th>
+                          <th scope="col">
+                            <div class="slds-truncate" title="Contact">Contact</div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" data-label="Opportunity Name">
+                            <div class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></div>
+                          </th>
+                          <td data-label="Account Name">
+                            <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                          </td>
+                          <td data-label="Close Date">
+                            <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                          </td>
+                          <td data-label="Prospecting">
+                            <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                          </td>
+                          <td data-label="Confidence">
+                            <div class="slds-truncate" title="20%">20%</div>
+                          </td>
+                          <td data-label="Amount">
+                            <div class="slds-truncate" title="$25k">$25k</div>
+                          </td>
+                          <td data-label="Contact">
+                            <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" data-label="Opportunity Name">
+                            <div class="slds-truncate" title="Cloudhub + Anypoint Connectors"><a href="javascript:void(0);">Cloudhub + Anypoint Connectors</a></div>
+                          </th>
+                          <td data-label="Account Name">
+                            <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                          </td>
+                          <td data-label="Close Date">
+                            <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                          </td>
+                          <td data-label="Prospecting">
+                            <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                          </td>
+                          <td data-label="Confidence">
+                            <div class="slds-truncate" title="20%">20%</div>
+                          </td>
+                          <td data-label="Amount">
+                            <div class="slds-truncate" title="$25k">$25k</div>
+                          </td>
+                          <td data-label="Contact">
+                            <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                  <div id="tab-scoped-3" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-3__item">Item Three Content</div>
+                </div>
+
+
+
+              </div>
+              <div id="tab-default-2" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">Item Two Content</div>
+              <div id="tab-default-3" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">Item Three Content</div>
+            </div></div>
+            <div class="slds-p-horizontal--small slds-size--1-of-3"></div>
+            <div class="slds-p-horizontal--small slds-size--2-of-3"></div>
+          </div>
+
+        </body>
+        </html>

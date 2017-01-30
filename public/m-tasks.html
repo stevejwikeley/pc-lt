@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="assets/styles/salesforce-lightning-design-system.css" />
+  <title>Playground</title>
+
+</head>
+<body>
+
+  <!-- headers -->
+
+  <div class="slds-page-header" role="banner">
+    <div class="slds-media slds-media--center">
+      <div class="slds-media__figure">
+        <svg aria-hidden="true" class="slds-icon slds-icon-standard-opportunity">
+          <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+        </svg>
+      </div>
+      <div class="slds-media__body">
+        <p class="slds-page-header__title slds-truncate" title="Rohde Corp - 80,000 Widgets">Opportunities</p>
+      </div>
+      <div class="slds-media__figure slds-media__figure--reverse">
+        <button class="slds-button slds-button--neutral">New</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- tabs -->
+  <div class="slds-tabs--default">
+    <ul class="slds-tabs--default__nav" role="tablist">
+      <li class="slds-tabs--default__item slds-text-title--caps slds-active"
+      title="Item Two" role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-2" id="tab-default-2__item">Your Tasks</a></li>
+      <li class="slds-tabs--default__item slds-text-title--caps" title="Item One" role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" id="tab-default-1__item">Timesheets</a></li>
+      <li class="slds-tabs--default__item slds-text-title--caps" title="Item Three"
+      role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">Expenses</a></li>
+      <li class="slds-tabs--default__item slds-text-title--caps" title="Item Three"
+      role="presentation"><a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">Timeline</a></li>
+    </ul>
+    <div id="tab-default-1" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-1__item">Item One Content</div>
+    <div id="tab-default-2" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-2__item">
+      <!--   tasks-->  
+
+
+      <div class="slds-grid slds-wrap">
+
+        <div class="slds-p-horizontal--small slds-size--1-of-1">
+
+          <div class="slds-tile slds-media slds-hint-parent">
+            <div class="slds-media__figure">
+              <label class="slds-checkbox">
+                <input type="checkbox" name="options" id="checkbox-01" />
+                <span class="slds-checkbox--faux"></span>
+                <span class="slds-form-element__label slds-assistive-text">Did you complete this task?</span>
+              </label>
+            </div>
+            <div class="slds-media__body">
+              <div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                <h3 class="slds-truncate" title="The Trammel Crow Company"><a href="javascript:void(0);">The Trammel Crow Company</a></h3>
+                <div class="slds-shrink-none">
+                  <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="More Actions">
+                    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                    </svg>
+                    <span class="slds-assistive-text">More options</span>
+                  </button>
+                </div>
+              </div>
+              <div class="slds-tile__detail slds-text-body--small">
+                <p class="slds-truncate" title="Assignee">Assignee</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="tab-default-3" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">Item Three Content</div>
+  </div>
+
+
+  <div class="slds-docked-form-footer">
+ 
+
+ <div class="slds-grid slds-wrap slds-grid--pull-padded">
+    <div class="slds-p-horizontal--small slds-size--1-of-4">
+         <span class="slds-icon_container slds-icon_container--circle slds-icon-action-description" title="description of icon when needed">
+    <svg aria-hidden="true" class="slds-icon slds-icon--small">
+      <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#description"></use>
+    </svg>
+    <span class="slds-assistive-text">Description of icon</span>
+
+  </span>
+  <p>Test</p>
+    </div>
+
+     <div class="slds-p-horizontal--small slds-size--1-of-4">
+         <span class="slds-icon_container slds-icon_container--circle slds-icon-action-description" title="description of icon when needed">
+    <svg aria-hidden="true" class="slds-icon slds-icon--small">
+      <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#description"></use>
+    </svg>
+    <span class="slds-assistive-text">Description of icon</span>
+  </span>
+    </div>
+
+     <div class="slds-p-horizontal--small slds-size--1-of-4">
+         <span class="slds-icon_container slds-icon_container--circle slds-icon-action-more" title="description of icon when needed">
+    <svg aria-hidden="true" class="slds-icon slds-icon--small">
+      <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#log_event"></use>
+    </svg>
+    <span class="slds-assistive-text">Description of icon</span>
+  </span>
+    </div>
+
+     <div class="slds-p-horizontal--small slds-size--1-of-4">
+         <span class="slds-icon_container slds-icon_container--circle slds-icon-action-description" title="description of icon when needed">
+    <svg aria-hidden="true" class="slds-icon slds-icon--small">
+      <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#description"></use>
+    </svg>
+    <span class="slds-assistive-text">Description of icon</span>
+  </span>
+    </div>
+</div>
+
+
+
+</body>
+</html>

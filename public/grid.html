@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="assets/styles/salesforce-lightning-design-system.css" />
+  <title>Playground</title>
+  <script src="/vis/dist/vis.js"></script>
+  <link href="/vis/dist/vis.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+  <div class="slds-context-bar">
+    <div class="slds-context-bar__primary slds-context-bar__item--divider-right">
+      <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--click slds-no-hover">
+        <div class="slds-context-bar__icon-action">
+          <a href="javascript:void(0);" class="slds-icon-waffle_container slds-context-bar__button">
+            <div class="slds-icon-waffle">
+              <div class="slds-r1"></div>
+              <div class="slds-r2"></div>
+              <div class="slds-r3"></div>
+              <div class="slds-r4"></div>
+              <div class="slds-r5"></div>
+              <div class="slds-r6"></div>
+              <div class="slds-r7"></div>
+              <div class="slds-r8"></div>
+              <div class="slds-r9"></div>
+            </div>
+            <span class="slds-assistive-text">Open App Launcher</span>
+          </a>
+        </div>
+        <span class="slds-context-bar__label-action slds-context-bar__app-name">
+          <span class="slds-truncate" title="{ props.appName || &#x27;App Name&#x27; }">App Name</span>
+        </span>
+      </div>
+    </div>
+    <nav class="slds-context-bar__secondary" role="navigation">
+      <ul class="slds-grid">
+        <li class="slds-context-bar__item">
+          <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Home">
+            <span class="slds-truncate">Home</span>
+          </a>
+        </li>
+        <li class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--hover" aria-haspopup="true">
+          <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item">
+            <span class="slds-truncate">Menu Item</span>
+          </a>
+          <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0">
+            <button class="slds-button slds-button--icon slds-context-bar__button" tabindex="-1" title="Open menu item submenu">
+              <svg aria-hidden="true" class="slds-button__icon">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+              </svg>
+              <span class="slds-assistive-text">Open menu item submenu</span>
+            </button>
+          </div>
+          <div class="slds-dropdown slds-dropdown--right">
+            <ul class="slds-dropdown__list" role="menu">
+              <li class="slds-dropdown__item" role="presentation">
+                <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                  <span class="slds-truncate">
+                    <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+                    </svg>Main action</span>
+                  </a>
+                </li>
+                <li class="slds-dropdown__header slds-has-divider--top-space" role="separator">
+                  <span class="slds-text-title--caps">Menu header</span>
+                </li>
+                <li class="slds-dropdown__item" role="presentation">
+                  <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                    <span class="slds-truncate">Menu Item One</span>
+                  </a>
+                </li>
+                <li class="slds-dropdown__item" role="presentation">
+                  <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                    <span class="slds-truncate">Menu Item Two</span>
+                  </a>
+                </li>
+                <li class="slds-dropdown__item" role="presentation">
+                  <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                    <span class="slds-truncate">Menu Item Three</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="slds-context-bar__item slds-is-active">
+            <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item">
+              <span class="slds-truncate">Menu Item</span>
+            </a>
+          </li>
+          <li class="slds-context-bar__item">
+            <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item 0">
+              <span class="slds-truncate">Menu Item</span>
+            </a>
+          </li>
+          <li class="slds-context-bar__item">
+            <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item 1">
+              <span class="slds-truncate">Menu Item</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="slds-page-header slds-page-header--object-home" role="banner">
+      <div class="slds-grid">
+        <div class="slds-col slds-has-flexi-truncate">
+          <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+              <span class="slds-icon_container">
+                <svg aria-hidden="true" class="slds-icon slds-icon-standard-lead">
+                  <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#lead"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <p class="slds-text-title--caps slds-line-height--reset">Scheduling</p>
+              <button class="slds-button slds-type-focus slds-m-right--small slds-grid slds-truncate" aria-haspopup="true">
+                <div class="slds-grid slds-grid--vertical-align-center slds-truncate">
+                  <h1 class="slds-page-header__title slds-truncate" title="this should match My Leads">All Division ABC</h1>
+                  <svg aria-hidden="true" class="slds-button__icon slds-button__icon--right slds-no-flex">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-no-flex slds-grid slds-align-top slds-p-bottom--xx-small">
+          <div class="slds-button-group" role="group">
+            <button class="slds-button slds-button--neutral">New Project</button>
+            <button class="slds-button slds-button--neutral">New Booking</button>
+            <div class="slds-button--last">
+              <button class="slds-button slds-button--icon-border-filled" aria-haspopup="true" title="More Actions">
+                <svg aria-hidden="true" class="slds-button__icon">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                </svg>
+                <span class="slds-assistive-text">More Actions</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slds-grid">
+        <div class="slds-col slds-align-bottom">
+          <p class="slds-text-body--small">5 Resource Requests • 3 Filters</p>
+        </div>
+        <div class="slds-col slds-no-flex slds-grid slds-align-bottom">
+          <div class="slds-dropdown-trigger  slds-dropdown-trigger--click slds-m-left--x-small" aria-expanded="false">
+            <button class="slds-button slds-button--icon-more" aria-haspopup="true" title="List View Controls">
+              <svg aria-hidden="true" class="slds-button__icon">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#filterList"></use>
+              </svg>
+              3
+              <svg aria-hidden="true" class="slds-button__icon slds-button__icon--x-small">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+              </svg>
+              <span class="slds-assistive-text">List View Controls</span>
+            </button>
+          </div>
+          <div class="slds-button-group" role="group">
+            <button class="slds-button slds-button--icon-border" title="Charts">
+              <svg aria-hidden="true" class="slds-button__icon">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#zoomin"></use>
+              </svg>
+              <span class="slds-assistive-text">Charts</span>
+            </button>
+            <button class="slds-button slds-button--icon-border" title="Filters">
+              <svg aria-hidden="true" class="slds-button__icon">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#zoomout"></use>
+              </svg>
+              <span class="slds-assistive-text">Filters</span>
+            </button>
+          </div>
+          <div class="slds-button-group" role="group">
+
+            <button class="slds-button slds-button--icon-border" title="Filters">
+              <svg aria-hidden="true" class="slds-button__icon">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#settings"></use>
+              </svg>
+              <span class="slds-assistive-text">Filters</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slds-grid slds-wrap">
+      <div class="slds-p-horizontal--small slds-size--3-of-3 slds-m-top--medium slds-m-bottom--medium">
+        <h3 class="slds-section__title" style="position: relative;">
+        Projects
+         
+          
+        
+          <div class="slds-button-group" style="position:absolute; top:0px;right:10px;" role="group">
+  <button class="slds-button slds-button--icon-border" title="Charts">
+    <svg aria-hidden="true" class="slds-button__icon">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#left"></use>
+    </svg>
+    <span class="slds-assistive-text">Charts</span>
+  </button>
+  <button class="slds-button slds-button--neutral" title="Filter List">
+    1 Jan 17 - 31 Jan 17
+    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--x-small">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+    </svg>
+    <span class="slds-assistive-text">Filter List</span>
+  </button>
+  <button class="slds-button slds-button--icon-more" aria-haspopup="true" title="More Actions">
+    <svg aria-hidden="true" class="slds-button__icon">
+      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#right"></use>
+    </svg>
+    
+    <span class="slds-assistive-text">Settings</span>
+  </button>
+</div></h3>
+      </div>
+      <div class="slds-p-horizontal--small slds-size--3-of-3">
+        <table class="slds-table slds-table--bordered slds-table--fixed-layout slds-no-row-hover slds-table--col-bordered" role="grid">
+          <thead style="text-align: center;">
+           <tr class="slds-text-title--caps">
+            <th width="200px"></th>
+            <th colspan="5" style="text-align: center;">
+              31 Dec - 6 Jan
+            </th>
+            <th colspan="5" style="text-align: center;">
+              7 - 14 Jan
+            </th>
+            <th colspan="5" style="text-align: center;">
+              15 - 22 Jan
+            </th>
+            <th colspan="5" style="text-align: center;">
+              23 - 30 Jan
+            </th>
+          </tr>
+          <tr class="slds-text-title--caps">
+            <th width="200px">Project</th>
+            <th>
+              M 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              W 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              F 31
+            </th>
+            <th>
+              M 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              W 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              F 31
+            </th>
+            <th>
+              M 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              W 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              F 31
+            </th>
+            <th>
+              M 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              W 31
+            </th>
+            <th>
+              T 31
+            </th>
+            <th>
+              F 31
+            </th>
+
+          </tr>
+        </thead>
+        <tbody>
+         <tr >
+
+         </tr>
+
+         <tr>
+          <td width="200px">
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+              </svg>
+              <span class="slds-assistive-text">Description of icon</span>
+            </span>
+
+            ABC Good Project 
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#settings"></use>
+              </svg>
+              <span class="slds-assistive-text">Description of icon</span>
+            </span>
+          </td>
+          <td colspan="18" class="slds-box slds-theme--shade slds-theme--alert-texture"></td>
+          <td colspan="2"></td>
+        </tr>
+
+        <tr >
+          <td >
+            <div class="slds-tile slds-media">
+              <div class="slds-media__figure">
+                <span class="slds-avatar slds-avatar--circle slds-avatar--small">
+                  <img src="/assets/images/avatar2.jpg" alt="Person&#x27;s name" />
+                </span>
+              </div>
+              <div class="slds-media__body">
+                <h3 class="slds-truncate" title="Lexee L. Jackson"><a href="javascript:void(0);">Kyle Walker</a></h3>
+                
+              </div>
+            </div>
+          </td>
+
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td colspan="2"></td>
+        </tr>
+        <tr >
+          <td ><div class="slds-tile slds-media">
+            <div class="slds-media__figure">
+              <span class="slds-avatar slds-avatar--circle slds-avatar--small">
+                <img src="/assets/images/avatar2.jpg" alt="Person&#x27;s name" />
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <h3 class="slds-truncate" title="Lexee L. Jackson"><a href="javascript:void(0);">Lexee L. Jackson</a></h3>
+              <div class="slds-tile__detail slds-text-body--small">
+                <ul class="slds-list--horizontal slds-has-dividers--right">
+                  <li class="slds-item">3d p/w</li>
+                </ul>
+              </div>
+            </div>
+          </div></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td class="slds-theme--warning"><center>2</center></td>
+          <td class="slds-theme--error"><center>0</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td><center>8</center></td>
+          <td colspan="2"></td>
+        </tr>
+      </tr>
+      <tr>
+        <td width="200px">
+          <div class="slds-tile slds-hint-parent">
+            <div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+              <h3 class="slds-truncate" title="Salesforce UX">
+                <span class="slds-icon_container" title="description of icon when needed">
+                  <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Description of icon</span>
+                </span>
+                Salesforce UX</h3>
+                <div class="slds-shrink-none">
+                  <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true" title="More Actions">
+                    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                    </svg>
+                    <span class="slds-assistive-text">More options</span>
+                  </button>
+                </div>
+              </div>
+              <div class="slds-tile__detail slds-text-body--small" style="margin-left:20px">
+                <ul class="slds-list--horizontal slds-has-dividers--right">
+                  <li class="slds-item">-12% </li>
+                  <li class="slds-item">+5%</li>
+                </ul>
+              </div>
+            </div>
+          </td>
+          <td colspan="15" class="slds-box slds-theme--shade slds-theme--alert-texture"></td>
+          <td colspan="5"></td>
+        </tr>
+        <tr>
+          <td width="200px">
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+              </svg>
+              <span class="slds-assistive-text">Description of icon</span>
+            </span>
+
+            ZYDF New Project
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#settings"></use>
+              </svg>
+              <span class="slds-assistive-text">Description of icon</span>
+            </span>
+          </td>
+          <td colspan="20" class="slds-box slds-theme--shade slds-theme--alert-texture"></td>
+          
+        </tr>
+
+
+      </tbody>
+
+    </table>
+<!--
+
+    <tr class="slds-text-title--caps">
+      <th class="slds-cell-shrink" scope="col">
+        <label class="slds-checkbox">
+          <input type="checkbox" name="options" />
+          <span class="slds-checkbox--faux"></span>
+          <span class="slds-assistive-text">Select All</span>
+        </label>
+      </th>
+      <th class="slds-is-sortable slds-is-resizable" scope="col" aria-label="Opportunity Name">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+          <span class="slds-assistive-text">Sort </span>
+          <span class="slds-truncate" title="Opportunity Name">Opportunity Name</span>
+          <div class="slds-icon_container">
+            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+            </svg>
+          </div>
+          <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+        </a>
+        <div class="slds-resizable">
+          <label for="cell-resize-handle-203" class="slds-assistive-text">Opportunity Name column width</label>
+          <input class="slds-resizable__input slds-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-203" />
+          <span class="slds-resizable__handle">
+            <span class="slds-resizable__divider"></span>
+          </span>
+        </div>
+      </th>
+      <th class="slds-is-sortable slds-is-resizable" scope="col" aria-label="Account Name">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+          <span class="slds-assistive-text">Sort </span>
+          <span class="slds-truncate" title="Account Name">Account Name</span>
+          <div class="slds-icon_container">
+            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+            </svg>
+          </div>
+          <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+        </a>
+        <div class="slds-resizable">
+          <label for="cell-resize-handle-204" class="slds-assistive-text">Account Name column width</label>
+          <input class="slds-resizable__input slds-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-204" />
+          <span class="slds-resizable__handle">
+            <span class="slds-resizable__divider"></span>
+          </span>
+        </div>
+      </th>
+      <th class="slds-is-sortable slds-is-resizable" scope="col" aria-label="Close Date">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+          <span class="slds-assistive-text">Sort </span>
+          <span class="slds-truncate" title="Close Date">Close Date</span>
+          <div class="slds-icon_container">
+            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+            </svg>
+          </div>
+          <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+        </a>
+        <div class="slds-resizable">
+          <label for="cell-resize-handle-205" class="slds-assistive-text">Close Date column width</label>
+          <input class="slds-resizable__input slds-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-205" />
+          <span class="slds-resizable__handle">
+            <span class="slds-resizable__divider"></span>
+          </span>
+        </div>
+      </th>
+      <th class="slds-is-sortable slds-is-resizable" scope="col" aria-label="Stage">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+          <span class="slds-assistive-text">Sort </span>
+          <span class="slds-truncate" title="Stage">Stage</span>
+          <div class="slds-icon_container">
+            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+            </svg>
+          </div>
+          <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+        </a>
+        <div class="slds-resizable">
+          <label for="cell-resize-handle-206" class="slds-assistive-text">Stage column width</label>
+          <input class="slds-resizable__input slds-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-206" />
+          <span class="slds-resizable__handle">
+            <span class="slds-resizable__divider"></span>
+          </span>
+        </div>
+      </th>
+      <th class="slds-is-sortable slds-is-resizable" scope="col" aria-label="Confidence">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+          <span class="slds-assistive-text">Sort </span>
+          <span class="slds-truncate" title="Confidence">Confidence</span>
+          <div class="slds-icon_container">
+            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+            </svg>
+          </div>
+          <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+        </a>
+        <div class="slds-resizable">
+          <label for="cell-resize-handle-207" class="slds-assistive-text">Confidence column width</label>
+          <input class="slds-resizable__input slds-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-207" />
+          <span class="slds-resizable__handle">
+            <span class="slds-resizable__divider"></span>
+          </span>
+        </div>
+      </th>
+      <th class="slds-is-sortable slds-is-resizable" scope="col" aria-label="Amount">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+          <span class="slds-assistive-text">Sort </span>
+          <span class="slds-truncate" title="Amount">Amount</span>
+          <div class="slds-icon_container">
+            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+            </svg>
+          </div>
+          <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+        </a>
+        <div class="slds-resizable">
+          <label for="cell-resize-handle-208" class="slds-assistive-text">Amount column width</label>
+          <input class="slds-resizable__input slds-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-208" />
+          <span class="slds-resizable__handle">
+            <span class="slds-resizable__divider"></span>
+          </span>
+        </div>
+      </th>
+      <th class="slds-is-sortable slds-is-resizable" scope="col" aria-label="Contact">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+          <span class="slds-assistive-text">Sort </span>
+          <span class="slds-truncate" title="Contact">Contact</span>
+          <div class="slds-icon_container">
+            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-is-sortable__icon">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+            </svg>
+          </div>
+          <span class="slds-assistive-text" aria-live="assertive" aria-atomic="true"></span>
+        </a>
+        <div class="slds-resizable">
+          <label for="cell-resize-handle-209" class="slds-assistive-text">Contact column width</label>
+          <input class="slds-resizable__input slds-assistive-text" type="range" min="20" max="1000" id="cell-resize-handle-209" />
+          <span class="slds-resizable__handle">
+            <span class="slds-resizable__divider"></span>
+          </span>
+        </div>
+      </th>
+      <th class="slds-cell-shrink" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="slds-hint-parent">
+      <td role="gridcell" class="slds-cell-shrink" data-label="Select row Cloudhub">
+        <label class="slds-checkbox">
+          <input type="checkbox" name="options" />
+          <span class="slds-checkbox--faux"></span>
+          <span class="slds-assistive-text">Select row Cloudhub</span>
+        </label>
+      </td>
+      <th scope="row" data-label="Opportunity Name">
+        <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+      </th>
+      <td role="gridcell" data-label="Account Name">
+        <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+      </td>
+      <td role="gridcell" data-label="Close Date">
+        <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+      </td>
+      <td role="gridcell" data-label="Prospecting">
+        <div class="slds-truncate" title="Prospecting">Prospecting</div>
+      </td>
+      <td role="gridcell" data-label="Confidence">
+        <div class="slds-truncate" title="20%">20%</div>
+      </td>
+      <td role="gridcell" data-label="Amount">
+        <div class="slds-truncate" title="$25k">$25k</div>
+      </td>
+      <td role="gridcell" data-label="Contact">
+        <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+      </td>
+      <td role="gridcell" class="slds-cell-shrink" data-label="Actions">
+        <button class="slds-button slds-button--icon-border slds-button--icon-x-small" title="Show More">
+          <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+          </svg>
+          <span class="slds-assistive-text">Show More</span>
+        </button>
+      </td>
+    </tr>
+    <tr class="slds-hint-parent">
+      <td role="gridcell" class="slds-cell-shrink" data-label="Select row Cloudhub + Anypoint Connectors">
+        <label class="slds-checkbox">
+          <input type="checkbox" name="options" />
+          <span class="slds-checkbox--faux"></span>
+          <span class="slds-assistive-text">Select row Cloudhub + Anypoint Connectors</span>
+        </label>
+      </td>
+      <th scope="row" data-label="Opportunity Name">
+        <div class="slds-truncate" title="Cloudhub + Anypoint Connectors">Cloudhub + Anypoint Connectors</div>
+      </th>
+      <td role="gridcell" data-label="Account Name">
+        <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+      </td>
+      <td role="gridcell" data-label="Close Date">
+        <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+      </td>
+      <td role="gridcell" data-label="Prospecting">
+        <div class="slds-truncate" title="Prospecting">Prospecting</div>
+      </td>
+      <td role="gridcell" data-label="Confidence">
+        <div class="slds-truncate" title="20%">20%</div>
+      </td>
+      <td role="gridcell" data-label="Amount">
+        <div class="slds-truncate" title="$25k">$25k</div>
+      </td>
+      <td role="gridcell" data-label="Contact">
+        <div class="slds-truncate" title="jrogers@cloudhub.com"><a href="javascript:void(0);">jrogers@cloudhub.com</a></div>
+      </td>
+      <td role="gridcell" class="slds-cell-shrink" data-label="Actions">
+        <button class="slds-button slds-button--icon-border slds-button--icon-x-small" title="Show More">
+          <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+          </svg>
+          <span class="slds-assistive-text">Show More</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+-->
+
+<div class="slds-docked_container" style="z-index: 99999">
+  <div role="dialog" aria-labelledby="dialog-heading-id" class="slds-docked-composer slds-grid slds-grid--vertical slds-nowrap slds-is-open">
+    <header class="slds-docked-composer__header slds-grid slds-grid--align-spread slds-shrink-none">
+      <div class="slds-media slds-media--center">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-standard-call">
+            <svg aria-hidden="true" class="slds-icon slds-icon--small">
+              <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#avatar"></use>
+            </svg>
+            <span class="slds-assistive-text">Call Icon</span>
+          </span>
+        </div>
+        <div class="slds-media__body">
+          <h2 id="dialog-heading-id">Resource Requests</h2>
+        </div>
+      </div>
+      <div class="slds-docked-composer__actions">
+        <button class="slds-button slds-button--icon slds-button--icon-inverse" title="Minimize window">
+          <svg aria-hidden="true" class="slds-button__icon">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#minimize_window"></use>
+          </svg>
+          <span class="slds-assistive-text">Minimize window</span>
+        </button>
+        <button class="slds-button slds-button--icon slds-button--icon-inverse" title="Expand Composer">
+          <svg aria-hidden="true" class="slds-button__icon">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#expand_alt"></use>
+          </svg>
+          <span class="slds-assistive-text">Expand Composer</span>
+        </button>
+        <button class="slds-button slds-button--icon slds-button--icon-inverse" title="Close">
+          <svg aria-hidden="true" class="slds-button__icon">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </div>
+    </header>
+    <div class="slds-docked-composer__body slds-col slds-grid slds-grid--vertical slds-nowrap slds-size--1-of-1 slds-p-horizontal--medium slds-p-top--medium">
+        <ul class="slds-has-dividers--around-space">
+        <li class="slds-item">
+          <div class="slds-tile slds-tile--board">
+            <h3 class="slds-truncate" title="Anypoint Connectors"><a href="javascript:void(0);">Anypoint Connectors</a></h3>
+            <div class="slds-tile__detail slds-text-body--small">
+              <p class="slds-text-heading--medium">$500,000</p>
+              <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Company One</a></p>
+              <p class="slds-truncate">Closing 9/30/2015</p>
+            </div>
+          </div>
+        </li>
+        <li class="slds-item">
+          <div class="slds-tile slds-tile--board">
+            <h3 class="slds-truncate" title="Cloudhub"><a href="javascript:void(0);">Cloudhub</a></h3>
+            <div class="slds-tile__detail slds-text-body--small">
+              <p class="slds-text-heading--medium">$185,000</p>
+              <p class="slds-truncate" title="Company Two"><a href="javascript:void(0);">Company Two</a></p>
+              <p class="slds-truncate slds-has-alert">Closing 12/15/2015</p>
+              <span class="slds-icon_container slds-tile--board__icon">
+                <svg aria-hidden="true" class="slds-icon slds-icon-text-warning slds-icon--x-small">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                </svg>
+                <span class="slds-assistive-text">Warning Icon</span>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li class="slds-item">
+          <div class="slds-tile slds-tile--board">
+            <h3 class="slds-truncate" title="600 Widgets"><a href="javascript:void(0);">600 Widgets</a></h3>
+            <div class="slds-tile__detail slds-text-body--small">
+              <p class="slds-text-heading--medium">$35,000</p>
+              <p class="slds-truncate" title="Company Three"><a href="javascript:void(0);">Company Three</a></p>
+              <p class="slds-truncate">Closing 10/12/2015</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+    <footer class="slds-docked-composer__footer slds-shrink-none">
+      <div class="slds-float--right slds-grid slds-grid--align-end slds-size--1-of-2 slds-text-align--right">
+        <button class="slds-button slds-button--brand">Action</button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div id="visualization" class="slds-m-vertical--large"></div>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script type="text/javascript">
+ 
+
+    // create a dataset with items
+    // we specify the type of the fields `start` and `end` here to be strings
+    // containing an ISO date. The fields will be outputted as ISO dates
+    // automatically getting data from the DataSet via items.get().
+    var items = new vis.DataSet({
+        type: { start: 'ISODate', end: 'ISODate' }
+    });
+    var groups = new vis.DataSet([{
+        id: 'bar', content:'Project ABNC', subgroupOrder: function (a,b) {return a.subgroupOrder - b.subgroupOrder;}
+    },{
+        id: 'foo', content:'Project xyz', subgroupOrder: 'subgroupOrder' // this group has no subgroups but this would be the other method to do the sorting.
+    }]);
+    // add items to the DataSet
+    items.add([
+        {id: 'A',start: '2014-01-20', end: '2014-01-22', type: 'background', group:'foo'},
+        {id: 'B',start: '2014-01-22', end: '2014-01-23', type: 'background', group:'foo', className: 'negative'},
+        {id: 0, content: 'no subgroup', start: '2014-01-20', end: '2014-01-22',group:'foo'},
+
+        {id: 'SG_1_1',start: '2014-01-25', end: '2014-01-27', type: 'background', group:'bar', subgroup:'sg_1', subgroupOrder:0},
+        {id: 'SG_1_2', start: '2014-01-26', end: '2014-01-27', type: 'background', className: 'positive',group:'bar', subgroup:'sg_1', subgroupOrder:0},
+        {id: 1, content: 'subgroup0', start: '2014-01-23 12:00:00', end: '2014-01-26 12:00:00',group:'bar', subgroup:'sg_1', subgroupOrder:0},
+        {id: 'SG_2_1', start: '2014-01-27', end: '2014-01-29', type: 'background', group:'bar', subgroup:'sg_2', subgroupOrder:1},
+        {id: 'SG_2_2', start: '2014-01-27', end: '2014-01-28', type: 'background', className: 'negative',group:'bar', subgroup:'sg_2', subgroupOrder:1},
+        {id: 2, content: 'subgroup1', start: '2014-01-27', end: '2014-01-29',group:'bar', subgroup:'sg_2', subgroupOrder:1},
+
+        {id: 'background', start: '2014-01-29', end: '2014-01-30', type: 'background', className: 'negative',group:'bar'},
+        {id: 'background_all', start: '2014-01-31', end: '2014-02-02', type: 'background', className: 'positive'},
+    ]);
+
+    var container = document.getElementById('visualization');
+    var options = {
+        // orientation:'top'
+        start: '2014-01-10',
+        end: '2014-02-10',
+        editable: true,
+        stack: false
+    };
+
+    var timeline = new vis.Timeline(container, items, groups, options);
+
+</script>
+
+
+</body>
+</html>
